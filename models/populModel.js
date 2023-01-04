@@ -17,7 +17,7 @@ const popModel = db.define("pupulRecord", {
     fullName: {
         type: Sequelize.DataTypes.STRING
     },
-    monthyDue : {
+    monthlyDue : {
         type: Sequelize.DataTypes.DOUBLE
     },
     paid : {

@@ -28,7 +28,9 @@ export const createPop = async(req,res)=>{
                 stateOrigin : req.body.stateOrigin,
                 fullName : req.body.firstName + req.body.lastName,
                 monthlyDue: req.body.monthlyDue,
-                
+                paid: req.body.paid,
+                balance: req.body.monthlyDue - req.body.paid
+
            });
             console.log(newPop.firstName)
             // console.log(newPop)
@@ -38,7 +40,7 @@ export const createPop = async(req,res)=>{
             })
         }
     }catch(err){
-        res.status(400).send(err.message)
+        res.status(400).json({message: err.message})
     }
 };
 
